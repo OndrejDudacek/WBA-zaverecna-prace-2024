@@ -54,7 +54,7 @@ Celaá stránka bude obsahovat 2 stejné prvky, které budou na každé podstrá
 Header bude obsahovat navbar, s logem a odkazy na postránky, cover, což je obrázek s nadpisem stránky/postránky.
 
 #### Footer
-Ve footru najdete logo a jméno, rozshálejší navigaci a odkazy na sociální sítě.
+Ve footru najdete logo a jméno, rozshálejší navigaci a odkazy na sociální sítě a mail
 
 #### Postraní čára
 Na každé stránce/podstránce bude na levé straně bílá čára s puntíkem u každé sekce. Pokusím se udělat, aby na čáře jezdila ikona foťáku a vždy, když dojede na puntík, "magneticky" se k němu přichytí a ikona se změní na foťák s bleskem
