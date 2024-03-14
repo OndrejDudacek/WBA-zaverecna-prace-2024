@@ -1,0 +1,1 @@
+[Tohle](https://www.figma.com/file/Trk8xx6SlYzlZiK37pFJ4R/Str%C3%A1nka?type=design&node-id=64%3A34&mode=design&t=QbPBhsK6DalvpGrz-1) je link link na design v aplikaci Figma.
