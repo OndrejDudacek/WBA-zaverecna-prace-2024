@@ -1,5 +1,5 @@
 # Zadání portfoliová stránka s fotografickou tématikou
-WBA závěrečný projekt
+Závěrečný projekt na předmět WBA (Smíchovská střední průmyslová škola a gymnázium)
 ## Obsah
 - [Zadání portfoliová stránka s fotografickou tématikou](#zadání-portfoliová-stránka-s-fotografickou-tématikou)
   - [Obsah](#obsah)
