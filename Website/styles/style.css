@@ -1,0 +1,17 @@
+:root{
+    --main-color: #1E1E1E;
+    --text-color: #FFFFFF;
+    
+}
+
+body {
+    width: 100vw;
+    background-color: #1E1E1E;
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
