@@ -1,9 +1,7 @@
 :root{
     --main-color: #1E1E1E;
     --text-color: #FFFFFF;
-    --heading-font: 'Montserrat', sans-serif;
-    --body-font: 'Roboto', sans-serif;
-    
+    --transition: 0.3s;
 }
 
 body {
@@ -24,12 +22,15 @@ header-navbar nav menu {
     justify-content: flex-end;
     align-self: center;
     gap: 20px;
+    padding: 40px 50px;
+    box-sizing: border-box;
 }
 
-header-navbar nav menu a {
+
+header-navbar nav menu a{
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
-    transition: 0.3s;
+    transition: var(--transition)
 }
