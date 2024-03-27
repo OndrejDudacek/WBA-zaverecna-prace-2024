@@ -1,8 +1,8 @@
 export default class Navbar extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <nav>
-                <menu>
+                <ul>
                     <li>
                         <a href="index.html"><img src="../imgs/logo.svg" alt="logo"></a>
                     </li>
@@ -18,8 +18,8 @@ export default class Navbar extends HTMLElement {
                     <li>
                         <a href="about.html">O mně</a>
                     </li>
-                </menu>
+                </ul>
             </nav>
         `;
-    }
+  }
 }
