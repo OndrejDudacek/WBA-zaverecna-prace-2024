@@ -4,7 +4,7 @@ export default class Navbar extends HTMLElement {
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html"><img src="../imgs/logo.svg" alt="logo"></a>
+                        <a href="index.html"><img class="logo" src="../imgs/logo.svg" alt="logo"></a>
                     </li>
                     <li>
                         <a href="photography.html">Fotografie</a>

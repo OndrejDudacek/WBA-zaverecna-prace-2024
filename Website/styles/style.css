@@ -1,36 +1,41 @@
-:root{
-    --main-color: #1E1E1E;
-    --text-color: #FFFFFF;
-    --transition: 0.3s;
+:root {
+  --main-color: #1e1e1e;
+  --text-color: #ffffff;
+  --transition: 0.3s;
+}
+
+.logo {
+  height: 122px;
+  width: 68px;
 }
 
 body {
-    width: 100vw;
-    background-color: #1E1E1E;
-    color: white;
+  width: 100vw;
+  background-color: var(--main-color);
+  color: var(--text-color);
 }
 
 header {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-header-navbar nav menu {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-self: center;
-    gap: 20px;
-    padding: 40px 50px;
-    box-sizing: border-box;
+header-navbar {
+  height: 130px;
+  width: 100%;
 }
 
+header-navbar nav {
+  height: 100%;
+  width: 100%;
+}
 
-header-navbar nav menu a{
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 2rem;
-    font-weight: 500;
-    transition: var(--transition)
+header-navbar nav ul {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 50px;
+  box-sizing: border-box;
 }
