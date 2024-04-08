@@ -3,8 +3,7 @@
   --text-color: #ffffff;
   --footer-color: #131313;
   --transition: 0.3s;
-  --button-color: rgba(53,53,53, 50);
-  --button-hightlighted: rgba(120,120,120, 77);
+  --button-color: #363636;
 }
 
 html{
@@ -50,7 +49,7 @@ body {
 header {
   display: flex;
   flex-direction: column;
-  background-image: url("../imgs/coverImg.jpg");
+  background-image: url("../imgs/coverImg.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* https://www.w3schools.com/howto/howto_css_parallax.asp */
@@ -149,7 +148,7 @@ article section.main-section-content section.text-buttons a {
 }
 
 article section.main-section-content section.text-buttons a:hover {
-  filter: brightness(6);
+  background-color: #ffffff;
   color: #000000;
 }
 
@@ -197,10 +196,6 @@ header article section.main-section-content section.text-buttons section {
   justify-content: flex-end;
   gap: 1.2rem;
   width: 100%;
-}
-
-header article section.main-section-content section.text-buttons section a:first-child {
-  background-color: var(--button-hightlighted);
 }
 
 header article section.main-section-content section.main-section-header div.side-line-dot {

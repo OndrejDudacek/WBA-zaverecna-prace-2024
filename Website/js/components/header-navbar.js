@@ -4,19 +4,19 @@ export default class Navbar extends HTMLElement {
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html"><img class="logo" src="../imgs/logo.svg" alt="logo"></a>
+                        <a href="index.html" aria-label="Vraťte se na hlavní stránku."><img class="logo" src="../imgs/logo.svg" alt="logo"></a>
                     </li>
                     <li class="nav-page-link">
-                        <a href="photography.html">Fotografie</a>
+                        <a href="photography.html" aria-label="Podívejte se na galerii mých nejlepších fotografií.">Fotografie</a>
                     </li>
                     <li class="nav-page-link">
-                        <a href="services.html"><s>Služby</s></a>
+                        <a href="services.html" aria-label="Přečtěte si informace o službách, které poskytuji."><s>Služby</s></a>
                     </li>
                     <li class="nav-page-link">
-                        <a href="contact.html">Kontakt</a>
+                        <a href="contact.html" aria-label="Podívejte se na možnosti, jak mě kontaktovat.">Kontakt</a>
                     </li>
                     <li class="nav-page-link">
-                        <a href="about.html">O mně</a>
+                        <a href="about.html" aria-label="Přečtěte si více informací o mně.">O mně</a>
                     </li>
                 </ul>
             </nav>
