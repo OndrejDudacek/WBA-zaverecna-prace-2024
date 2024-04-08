@@ -6,16 +6,16 @@ export default class Navbar extends HTMLElement {
                     <li>
                         <a href="index.html"><img class="logo" src="../imgs/logo.svg" alt="logo"></a>
                     </li>
-                    <li>
+                    <li class="nav-page-link">
                         <a href="photography.html">Fotografie</a>
                     </li>
-                    <li>
+                    <li class="nav-page-link">
                         <a href="services.html"><s>Služby</s></a>
                     </li>
-                    <li>
+                    <li class="nav-page-link">
                         <a href="contact.html">Kontakt</a>
                     </li>
-                    <li>
+                    <li class="nav-page-link">
                         <a href="about.html">O mně</a>
                     </li>
                 </ul>
