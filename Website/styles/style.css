@@ -3,7 +3,7 @@
   --text-color: #ffffff;
   --transition: 0.3s;
   --button-color: rgba(53,53,53, 50);
-  --button-hightlighted: rgba(61,61,61, 77);
+  --button-hightlighted: rgba(80,80,80, 77);
 }
 
 html{
@@ -122,6 +122,8 @@ article section.main-section-content {
 }
 
 header section.main-section-content {
+  justify-content: flex-start;
+  height: 70%;
   border-bottom: #ffffff 0.13rem solid;
   align-items: flex-end;
   text-align: right;
@@ -129,23 +131,23 @@ header section.main-section-content {
   border-right: #ffffff 0.13rem solid;
 }
 
-header section.main-section-content section.text-buttons p {
-  font-size: 25px;
-  font-weight: 300;
-}
-
 header article section.main-section-content section.text-buttons section {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 1.2rem;
   width: 100%;
+}
+
+header section.main-section-content section.text-buttons section a:first-child {
+  background-color: var(--button-hightlighted);
 }
 
 article section.main-section-content section.text-buttons {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 30px;
-  width: 388px;
+  gap: 1.2rem;
+  width: 26rem;
 }
 
 article section.main-section-content section.text-buttons p {
@@ -153,23 +155,24 @@ article section.main-section-content section.text-buttons p {
   font-weight: 300;
 }
 
-article section.main-section-content section.text-buttons a {
-  font-size: 20px;
+header section.main-section-content section.text-buttons p {
+  font-size: 1.2rem;
   font-weight: 300;
-  padding: 10px 30px;
+}
+
+article section.main-section-content section.text-buttons a {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.5rem 0.7rem;
   border: 2px solid #ffffff;
   transition: var(--transition);
   background-color: var(--button-color);
 }
 
-article section.main-section-content section.text-buttons section a:first-child {
-  background-color: var(--button-hightlighted);
-}
-
-article section.main-section-content section.text-buttons section a:hover {
-  filter: brightness(2.5);
+article section.main-section-content section.text-buttons a:hover {
+  filter: brightness(6);
   color: #000000;
-  font-weight: 450;
+  font-weight: 500;
 }
 
 article section.main-section-content section.text-buttons a:hover {
