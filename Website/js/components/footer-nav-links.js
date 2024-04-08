@@ -4,7 +4,7 @@ export default class FooterNavLinks extends HTMLElement {
         <nav>
             <ul>
                 <li>
-                    <a href="index.html"><img src="../imgs/logo.svg" alt="logo"></a>
+                    <a href="index.html"><img class="logo" src="../imgs/logo.svg" alt="logo"></a>
                 </li>
                 <li>
                     <a href="index.html">
@@ -34,7 +34,7 @@ export default class FooterNavLinks extends HTMLElement {
             <ul>
                 <li>
                     <a href="services.html">
-                        <h3>Služby</h3>
+                        <h3><s>Služby</s></h3>
                     </a>
                 </li>
             </ul>
@@ -81,6 +81,9 @@ export default class FooterNavLinks extends HTMLElement {
                     <li>
                         <a href="https://www.linkedin.com/in/ond%C5%99ej-dud%C3%A1%C4%8Dek-00a430299/"><i
                                 class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a href="mailto:ondrej.dudacek@gmail.com"><i class="fas fa-envelope"></i></a>
                     </li>
                 </ul>
             </nav>
