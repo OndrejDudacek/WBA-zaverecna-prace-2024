@@ -1,5 +1,6 @@
 :root {
   --main-color: #1e1e1e;
+  --secundary-color: #2e2e2e;
   --text-color: #ffffff;
   --footer-color: #131313;
   --transition: 0.3s;
@@ -8,6 +9,7 @@
 
 html{
   font-size: min(1.5vw, 20px);
+  line-height: 3rem;
 }
 
 .logo {
@@ -22,7 +24,7 @@ div.side-line-dot {
   border-radius: 50%;
   position: absolute;
   left: -0.75rem;
-  top: calc(12rem + 1rem - 0.7rem);
+  top: calc(8rem + 1rem - 0.7rem);
 }
 
 h1{
@@ -38,12 +40,19 @@ h2{
 h3{
   font-size: 1.2rem;
   font-weight: 700;
+}
 
+b{
+  font-weight: 500;
 }
 
 body {
   background-color: var(--main-color);
   color: var(--text-color);
+}
+
+main > article:nth-child(2n) {
+  background-color: var(--secundary-color);
 }
 
 header {
@@ -112,7 +121,7 @@ article{
   padding:0 7rem;
 }
 
-article section.main-section-content {
+section.main-section-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -124,7 +133,7 @@ article section.main-section-content {
   position: relative;
 }
 
-article section.main-section-content section.text-buttons {
+section.text-buttons {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -132,13 +141,14 @@ article section.main-section-content section.text-buttons {
   width: 26rem;
 }
 
-article section.main-section-content section.text-buttons p {
+section.text-buttons p {
   font-size: 1.2rem;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
+  letter-spacing: 0.02rem;
   font-weight: 300;
 }
 
-article section.main-section-content section.text-buttons a {
+section.text-buttons a {
   font-size: 1rem;
   font-weight: 500;
   padding: 0.8rem 1.7rem;
@@ -147,12 +157,12 @@ article section.main-section-content section.text-buttons a {
   background-color: var(--button-color);
 }
 
-article section.main-section-content section.text-buttons a:hover {
+section.text-buttons a:hover {
   background-color: #ffffff;
   color: #000000;
 }
 
-article.about-article section.main-section-content, header article section.main-section-content {
+article.about-article section.main-section-content, header section.main-section-content {
   padding-right: 2.3rem;
   align-items: flex-end;
   text-align: right;
@@ -164,13 +174,13 @@ article.about-article section.main-section-content {
   border-top: #ffffff 0.13rem solid;
 }
 
-article.about-article section.main-section-header div.side-line-dot {
+article.about-article div.side-line-dot {
   left: auto;
   right: -0.75rem;
   top: calc(8rem + 1.3rem - 0.7rem);
 } 
 
-article.about-article section.main-section-content section.text-buttons {
+article.about-article section.text-buttons {
   align-items: flex-end;
 }
 
@@ -179,26 +189,26 @@ header article{
   justify-content: flex-end;
 }
 
-header article section.main-section-content {
+header section.main-section-content {
   justify-content: flex-start;
   height: 40%;
   border-bottom: #ffffff 0.13rem solid;
   padding-top: 1.7rem;
 }
 
-header article section.main-section-content section.text-buttons p {
+header section.text-buttons p {
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-header article section.main-section-content section.text-buttons section {
+header section.text-buttons section {
   display: flex;
   justify-content: flex-end;
   gap: 1.2rem;
   width: 100%;
 }
 
-header article section.main-section-content section.main-section-header div.side-line-dot {
+header div.side-line-dot {
   right: -0.75rem;
   left: auto;
   top: calc(1.7rem + 1.3rem - 0.7rem);
@@ -209,59 +219,59 @@ footer {
   background-color: var(--footer-color);
 }
 
-footer footer-nav-links {
+footer-nav-links {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
-footer footer-nav-links nav {
+footer-nav-links nav {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-footer footer-nav-links nav ul {
+footer-nav-links nav ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 0.6rem;
 }
 
-footer footer-nav-links nav ul li {
+footer-nav-links nav ul li {
   width: fit-content;
 }
 
-footer footer-nav-links nav ul li a::after {
+footer-nav-links nav ul li a::after {
   height: 0.01rem;
   bottom: -0.05rem;
 }
 
-footer footer-nav-links nav ul li:first-child a::after {
+footer-nav-links nav ul li:first-child a::after {
   height: 0.12rem;
   bottom: -0.2rem;
 }
 
-footer footer-nav-links nav ul li a img.logo {
+footer-nav-links nav ul li a img.logo {
   height: 3rem;
 }
 
-footer footer-nav-links nav ul:first-child li:first-child a::after {
+footer-nav-links nav ul:first-child li:first-child a::after {
   display: none;
 }
 
-footer footer-nav-links nav ul:first-child li:nth-child(2) a::after {
+footer-nav-links nav ul:first-child li:nth-child(2) a::after {
   height: 0.12rem;
   bottom: -0.2rem;
 }
 
-footer footer-nav-links hr {
+footer-nav-links hr {
   width: 100%;
   border: 0.01rem solid #ffffff;
 }
 
-footer footer-nav-links section.socials{
+section.socials{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -269,37 +279,74 @@ footer footer-nav-links section.socials{
   width: 100%;
 }
 
-footer footer-nav-links section.socials nav {
+section.socials nav {
   display: flex;
   justify-content: center;
 }
 
-footer footer-nav-links section.socials nav ul {
+section.socials nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 5rem;
 }
 
-footer footer-nav-links section.socials nav ul li a::after {
+section.socials nav ul li a::after {
   display: none;
 }
 
-footer footer-nav-links section.socials nav ul li a:hover i{
+section.socials nav ul li a:hover i{
   transform: scale(1.2);
 }
 
-footer footer-nav-links section.socials nav i{
+section.socials nav i{
   font-size: 3.5rem;
   transition: var(--transition);
 }
 
-footer footer-nav-links section.socials nav i:hover {
+section.socials nav i:hover {
   color: #ffffff;
 }
 
-footer footer-nav-links section.socials p {
+section.socials p {
   font-size: 0.9rem;
   font-weight: 200;
   filter: opacity(0.);
+}
+
+header.subpage-header {
+  height: 40vh;
+  background-position: bottom;
+}
+
+header.subpage-header article section.main-section-content{
+  padding-bottom: 2.5rem;
+}
+
+article#gear h3{
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+/* Jak stylovat scrollbar jsem se dozvěděl zde https://youtu.be/v_8CmC6cwUs?si=cYsrz0IlJKBydpuY */
+html::-webkit-scrollbar { 
+  width: 0.55vw;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #ffffff27;
+  border-radius: 0.3vw;;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff39;
+}
+
+html::-webkit-scrollbar-track:hover {
+  background-color: #ffffff11;
 }
