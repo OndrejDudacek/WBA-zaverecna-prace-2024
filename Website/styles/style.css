@@ -4,7 +4,8 @@
   --text-color: #ffffff;
   --footer-color: #131313;
   --transition: 0.3s;
-  --button-color: #363636;
+  --button-color: #3e3d3da1;
+  --side-line-dot-x: -0.85rem;
 }
 
 html{
@@ -20,10 +21,10 @@ html{
 div.side-line-dot {
   height: 1.4rem;
   aspect-ratio: 1;
-  background-color: #ffffff;
+  border: 0.1rem solid #ffffff;
   border-radius: 50%;
   position: absolute;
-  left: -0.75rem;
+  left: var(--side-line-dot-x);
   top: calc(8rem + 1rem - 0.7rem);
 }
 
@@ -51,7 +52,7 @@ body {
   color: var(--text-color);
 }
 
-main > article:nth-child(2n) {
+main > article:nth-child(2n + 1) {
   background-color: var(--secundary-color);
 }
 
@@ -148,18 +149,90 @@ section.text-buttons p {
   font-weight: 300;
 }
 
-section.text-buttons a {
+article#contact-form section.text-buttons {
+  width: 50rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+section#email-name {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+section#email-name section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+input, textarea {
+  width: 100%;
+  gap: 0.1rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  background-color: var(--button-color);
+  border: none;
+  border-bottom: #c1c1c1 0.1rem solid;
+  padding: 0.3rem 0.8rem;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+.acceptable {
+  border-bottom: #9bcc9b 0.1rem solid;
+}
+
+.unacceptable {
+  border-bottom: #da8888 0.1rem solid;
+}
+
+textarea {
+  height: 10rem;
+  resize: none;
+  padding: 0.8rem;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #ffffff7f;
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+input:hover, textarea:hover {
+  filter: brightness(1.2);
+}
+
+input:focus, textarea:focus {
+	filter: brightness(2);
+}
+
+button {
+  width: min-content;
+  align-self: flex-end;
+}
+
+section.text-buttons a, button {
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.8rem 1.7rem;
-  border: 0.1rem solid #ffffff;
+  padding: 0.7rem 1.7rem;
+  border: 0.15rem solid #ffffff;
   transition: var(--transition);
   background-color: var(--button-color);
 }
 
-section.text-buttons a:hover {
+section.text-buttons a:hover, button:hover {
   background-color: #ffffff;
   color: #000000;
+  cursor: pointer;
 }
 
 article.about-article section.main-section-content, header section.main-section-content {
@@ -176,7 +249,7 @@ article.about-article section.main-section-content {
 
 article.about-article div.side-line-dot {
   left: auto;
-  right: -0.75rem;
+  right: var(--side-line-dot-x);
   top: calc(8rem + 1.3rem - 0.7rem);
 } 
 
@@ -209,7 +282,7 @@ header section.text-buttons section {
 }
 
 header div.side-line-dot {
-  right: -0.75rem;
+  right: var(--side-line-dot-x);
   left: auto;
   top: calc(1.7rem + 1.3rem - 0.7rem);
 }

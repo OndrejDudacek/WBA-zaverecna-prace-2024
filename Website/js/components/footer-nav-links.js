@@ -45,7 +45,7 @@ export default class FooterNavLinks extends HTMLElement {
                     </a>
                 </li>
                 <li>
-                    <a href="contact.html#form" aria-label="Napište mi mail pomocí kontaktního formuláře.">Kontaktní formulář</a>
+                    <a href="contact.html#contact-form" aria-label="Napište mi mail pomocí kontaktního formuláře.">Kontaktní formulář</a>
                 </li>
             </ul>
             <ul>

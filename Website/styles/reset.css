@@ -48,3 +48,6 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+input:focus, textarea:focus {
+	outline: none;
+}
