@@ -4,8 +4,10 @@
   --text-color: #ffffff;
   --footer-color: #131313;
   --transition: 0.3s;
+  --side-line-dot-transition: 1s;
   --button-color: #3e3d3da1;
   --side-line-dot-x: -0.85rem;
+  --side-line-dit-y: calc(8rem + 0.2rem);
 }
 
 html{
@@ -23,9 +25,15 @@ div.side-line-dot {
   aspect-ratio: 1;
   border: 0.1rem solid #ffffff;
   border-radius: 50%;
+  background-color: var(--main-color);
   position: absolute;
   left: var(--side-line-dot-x);
-  top: calc(8rem + 1rem - 0.7rem);
+  top: var(--side-line-dit-y);
+  transition: var(--side-line-dot-transition);
+}
+
+div.active-side-line-dot {
+  background-color: #ffffff;
 }
 
 h1{
@@ -250,7 +258,7 @@ article.about-article section.main-section-content {
 article.about-article div.side-line-dot {
   left: auto;
   right: var(--side-line-dot-x);
-  top: calc(8rem + 1.3rem - 0.7rem);
+  top: var(--side-line-dit-y);
 } 
 
 article.about-article section.text-buttons {
