@@ -10,7 +10,7 @@ export default class Navbar extends HTMLElement {
                         <a href="photography.html" aria-label="Podívejte se na galerii mých nejlepších fotografií.">Fotografie</a>
                     </li>
                     <li class="nav-page-link">
-                        <a href="services.html" aria-label="Přečtěte si informace o službách, které poskytuji."><s>Služby</s></a>
+                        <a href="" aria-label="Přečtěte si informace o službách, které poskytuji."><s>Služby</s></a>
                     </li>
                     <li class="nav-page-link">
                         <a href="contact.html" aria-label="Podívejte se na možnosti, jak mě kontaktovat.">Kontakt</a>

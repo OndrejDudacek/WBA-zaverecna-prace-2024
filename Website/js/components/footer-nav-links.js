@@ -33,7 +33,7 @@ export default class FooterNavLinks extends HTMLElement {
             </ul>
             <ul>
                 <li>
-                    <a href="services.html" aria-label="Přečtěte si informace o službách, které poskytuji.">
+                    <a href="" aria-label="Přečtěte si informace o službách, které poskytuji.">
                         <h3><s>Služby</s></h3>
                     </a>
                 </li>

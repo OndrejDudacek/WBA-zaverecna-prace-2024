@@ -194,14 +194,6 @@ input, textarea {
   color: var(--text-color);
 }
 
-.acceptable {
-  border-bottom: #9bcc9b 0.1rem solid;
-}
-
-.unacceptable {
-  border-bottom: #da8888 0.1rem solid;
-}
-
 textarea {
   height: 10rem;
   resize: none;
@@ -220,6 +212,14 @@ input:hover, textarea:hover {
 
 input:focus, textarea:focus {
 	filter: brightness(2);
+}
+
+.acceptable {
+  border-bottom: #9bcc9b 0.1rem solid;
+}
+
+.unacceptable {
+  border-bottom: #da8888 0.1rem solid;
 }
 
 button {
@@ -408,6 +408,28 @@ article#gear h3{
   font-size: 1.6rem;
   font-weight: 700;
   margin-top: 2rem;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.gallery-filters button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.gallery-filters button i {
+  display: none; /* bude změněno s implemetací js */
+}
+
+.active-filter {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Jak stylovat scrollbar jsem se dozvěděl zde https://youtu.be/v_8CmC6cwUs?si=cYsrz0IlJKBydpuY */
