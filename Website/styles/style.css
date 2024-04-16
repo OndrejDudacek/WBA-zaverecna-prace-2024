@@ -445,6 +445,7 @@ article#gear h3{
   cursor: pointer;
 }
 
+
 /* Jak stylovat scrollbar jsem se dozvěděl zde https://youtu.be/v_8CmC6cwUs?si=cYsrz0IlJKBydpuY */
 html::-webkit-scrollbar { 
   width: 0.55vw;
