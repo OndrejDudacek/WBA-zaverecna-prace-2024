@@ -33,7 +33,7 @@ function imageFilter(filter) {
   previousActive.children[0].style.display = "none"; // https://www.geeksforgeeks.org/how-to-get-the-child-element-of-a-parent-using-javascript/
 
   const active = document.querySelector(
-    `.gallery-filters button[value="${filter}"]`
+    `.gallery-filters button[data-filter="${filter}"]`
   );
   active.classList.add("active-filter");
   active.children[0].style.display = "initial";
@@ -42,7 +42,7 @@ function imageFilter(filter) {
 const galleryFilters = document.querySelectorAll(".gallery-filters button");
 for (let filter of galleryFilters) {
   filter.addEventListener("click", () => {
-    imageFilter(filter.value);
+    imageFilter(filter.dataset.filter);
   });
 }
 
@@ -52,6 +52,6 @@ const indexImageFilterButtons = document.querySelectorAll(
 for (let button of indexImageFilterButtons) {
   button.addEventListener("click", () => {
     window.location.href =
-      "../views/photography.html" + "?filter=" + button.value;
+      "../views/photography.html" + "?filter=" + button.dataset.filter;
   });
 }
