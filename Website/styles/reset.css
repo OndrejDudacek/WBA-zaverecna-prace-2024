@@ -10,7 +10,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -41,13 +41,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-h1, h2, h3, h4, h5, h6, a{
+h1, h2, h3, h4, h5, h6, a, button{
 	font-family: 'Montserrat', sans-serif;
 }
 a {
 	text-decoration: none;
 	color: inherit;
 }
-input:focus, textarea:focus {
+input:focus, textarea:focus, button:focus, select:focus, a:focus {
 	outline: none;
 }

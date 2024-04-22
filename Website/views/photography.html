@@ -43,28 +43,26 @@
                 </section>
                 <section class="text-buttons">
                     <section class="gallery-filters">
-                        <button class="" data-filter="all"> <i class="fa-solid fa-check"></i> Vše</button>
-                        <button class="" data-filter="portraits"> <i class="fa-solid fa-check"></i> Portréty</button>
-                        <button class="active-filter" data-filter="film"> <i style="display: initial;"
-                                class="fa-solid fa-check"></i>
-                            Film</button>
-                        <button class="" data-filter="marketing"> <i class="fa-solid fa-check"></i> Marketing</button>
-                        <button class="" data-filter="street"> <i class="fa-solid fa-check"></i> Street</button>
+                        <button class="active-filter" value="all"> <i class="fa-solid fa-check"
+                                style="display: initial"></i>Vše</button>
+                        <button class="" value="portrait"> <i class="fa-solid fa-check"></i>Portréty</button>
+                        <button class="" value="film"> <i class="fa-solid fa-check"></i>Film</button>
+                        <button class="" value="marketing"> <i class="fa-solid fa-check"></i>Marketing</button>
+                        <button class="" value="street"> <i class="fa-solid fa-check"></i>Street</button>
                     </section>
                 </section>
-                <section class="foto-gallery">
-                    <img src="https://source.unsplash.com/random/?street" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?portrait" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?cat" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?dog" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?portrait" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?cat" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?dog" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?product" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?street" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?product" alt="fotografie">
-                    <img src="https://source.unsplash.com/random/?street" alt="fotografie">
-                    <img src="https://source.unsplash.com/random" alt="fotografie">
+                <section class="photo-gallery">
+                    <img src="https://source.unsplash.com/random/?street" alt="street">
+                    <img src="https://source.unsplash.com/random/?portrait" alt="portrait">
+                    <img src="https://source.unsplash.com/random/?film" alt="film">
+                    <img src="https://source.unsplash.com/random/?portrait" alt="portrait">
+                    <img src="https://source.unsplash.com/random/?portrait" alt="portrait">
+                    <img src="https://source.unsplash.com/random/?film" alt="film">
+                    <img src="https://source.unsplash.com/random/?film" alt="film">
+                    <img src="https://source.unsplash.com/random/?product" alt="marketing">
+                    <img src="https://source.unsplash.com/random/?street" alt="street">
+                    <img src="https://source.unsplash.com/random/?product" alt="marketing">
+                    <img src="https://source.unsplash.com/random/?street" alt="street">
                 </section>
             </section>
         </article>
@@ -74,6 +72,13 @@
         </footer>
     </main>
     <script src="../js/index.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search); // https://www.youtube.com/watch?v=CZP1iQFQjEY
+        const filter = urlParams.get('filter');
+        if (filter) {
+            imageFilter(filter);
+        }
+    </script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
   --text-color: #ffffff;
   --footer-color: #131313;
   --transition: 0.3s;
-  --side-line-dot-transition: 1s;
+  --side-line-dot-transition: 1.5s;
   --button-color: #3e3d3da1;
   --side-line-dot-x: -0.85rem;
   --side-line-dot-y: calc(8rem + 0.2rem);
@@ -29,7 +29,7 @@ div.side-line-dot {
   position: absolute;
   left: var(--side-line-dot-x);
   top: var(--side-line-dot-y);
-  transition: var(--side-line-dot-transition);
+  transition: var(--side-line-dot-transition) cubic-bezier(0.74,-0.01, 0.74, 0.85);
 }
 
 div.active-side-line-dot {
@@ -225,7 +225,7 @@ input:focus, textarea:focus {
 
 button {
   width: min-content;
-  align-self: flex-end;
+  /* align-self: flex-end; */
 }
 
 section.text-buttons a, button {
@@ -433,12 +433,12 @@ article#gear h3{
   color: #000000;
 }
 
-.foto-gallery {
+.photo-gallery {
   column-count: 3;
   column-gap: 1.2rem;
 }
 
-.foto-gallery img {
+.photo-gallery img {
   width: 100%;
   object-fit: cover;
   margin-bottom: 1.2rem;
