@@ -73,13 +73,13 @@ export default class FooterNavLinks extends HTMLElement {
             <nav>
                 <ul>
                     <li>
-                        <a href="https://www.instagram.com/ondra_dudaceeek/" aria-label="Podívejte se na můj instagram."><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/ondra_dudaceeek/" aria-label="Podívejte se na můj instagram."><i class="fab fa-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="https://github.com/OndrejDudacek" aria-label="Podívejte se na můj github."><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://github.com/OndrejDudacek" aria-label="Podívejte se na můj github."><i class="fab fa-github"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/ond%C5%99ej-dud%C3%A1%C4%8Dek-00a430299/" aria-label="Podívejte se na můj linkedin."><i
+                        <a target="_blank" href="https://www.linkedin.com/in/ond%C5%99ej-dud%C3%A1%C4%8Dek-00a430299/" aria-label="Podívejte se na můj linkedin."><i
                                 class="fab fa-linkedin"></i></a>
                     </li>
                     <li>
