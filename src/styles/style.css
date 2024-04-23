@@ -37,7 +37,7 @@ div.active-side-line-dot {
 }
 
 h1{
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
@@ -58,6 +58,13 @@ b{
 body {
   background-color: var(--main-color);
   color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 2560px;
 }
 
 main > article:nth-child(2n + 1) {
@@ -116,7 +123,7 @@ nav ul li a::after { /* underline effect https://www.youtube.com/watch?v=UpJyCDE
   transition: width var(--transition);
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after, nav ul li a:focus::after {
   width: 100%;
 }
 
@@ -147,7 +154,8 @@ section.text-buttons {
   flex-direction: column;
   align-items: flex-start;
   gap: 1.2rem;
-  width: 26rem;
+  width: 100%;
+  max-width: 26rem;
 }
 
 section.text-buttons p {
@@ -158,7 +166,8 @@ section.text-buttons p {
 }
 
 article#contact-form section.text-buttons {
-  width: 50rem;
+  width: 100%;
+  max-width: 50rem;
 }
 
 form {
@@ -207,12 +216,8 @@ input::placeholder, textarea::placeholder {
   font-family: 'Roboto', sans-serif;
 }
 
-input:hover, textarea:hover {
-  filter: brightness(1.2);
-}
-
-input:focus, textarea:focus {
-	filter: brightness(2);
+input:hover, textarea:hover, input:focus, textarea:focus {
+  background-color: #ffffff43;
 }
 
 .acceptable {
@@ -238,7 +243,7 @@ section.text-buttons a, button {
   background-color: var(--button-color);
 }
 
-section.text-buttons a:hover, button:hover {
+section.text-buttons a:hover, button:hover, section.text-buttons a:focus, button:focus {
   background-color: #ffffff;
   color: #000000;
   cursor: pointer;
@@ -310,8 +315,9 @@ footer-nav-links {
 
 footer-nav-links nav {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
 }
 
 footer-nav-links nav ul {
@@ -351,6 +357,7 @@ footer-nav-links nav ul:first-child li:nth-child(2) a::after {
 footer-nav-links hr {
   width: 100%;
   border: 0.01rem solid #ffffff;
+  box-sizing: border-box;
 }
 
 section.socials{
@@ -377,7 +384,7 @@ section.socials nav ul li a::after {
   display: none;
 }
 
-section.socials nav ul li a:hover i{
+section.socials nav ul li a:hover i, section.socials nav ul li a:focus i{
   transform: scale(1.2);
 }
 
@@ -386,7 +393,7 @@ section.socials nav i{
   transition: var(--transition);
 }
 
-section.socials nav i:hover {
+section.socials nav i:hover, section.socials nav i:focus {
   color: #ffffff;
 }
 
@@ -466,4 +473,46 @@ html::-webkit-scrollbar-thumb:hover {
 
 html::-webkit-scrollbar-track:hover {
   background-color: #ffffff11;
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 12px;
+  }
+
+  article {
+    padding: 0 1.3rem;
+  }
+
+  footer {
+    padding: 4rem 4rem;
+  }
+
+  footer-nav-links nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer-nav-links nav ul:first-child {
+    grid-row: span 2;
+  }
+
+  section.socials nav ul {
+    width: 100%;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  footer-nav-links nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer-nav-links nav ul:first-child {
+    grid-row: initial;
+    grid-column: span 2;
+  }
+
+  header section.main-section-content {
+    padding-left: 0;
+  }
 }
