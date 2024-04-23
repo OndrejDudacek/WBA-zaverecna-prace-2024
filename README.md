@@ -1,6 +1,6 @@
 # Závěrečná práce z WBA 2024
 
-V tomot repozitáři je uloženo vše, co se týká mého závěrečného projektu z předmětu WBA (Webové Aplikace) na Smíchovské střední průmyslové škole a gymnáziu, kde studuji obor IT.
+V tomto repozitáři je uloženo vše, co se týká mého závěrečného projektu z předmětu WBA (Webové Aplikace) na Smíchovské střední průmyslové škole a gymnáziu, kde studuji obor IT.
 
 Odkaz na GitHub [zde](https://github.com/OndrejDudacek/WBA-zaverecna-prace-2024.git).
 
