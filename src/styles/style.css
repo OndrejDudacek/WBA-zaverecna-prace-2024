@@ -112,7 +112,7 @@ header-navbar nav ul ul.text-page-links {
   gap: 1.6rem;
 }
 
-header-navbar nav ul li:first-child {
+header-navbar nav > ul li:first-child{
   margin-right: auto;
 }
 
@@ -136,7 +136,7 @@ nav ul li a:hover::after, nav ul li a:focus::after {
   width: 100%;
 }
 
-header-navbar nav ul li:first-child a::after {
+header-navbar nav > ul > li:first-child a::after {
   display: none;
 }
 
