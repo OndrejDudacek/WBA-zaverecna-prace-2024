@@ -496,10 +496,6 @@ section.hamburger-menu-icon.active div:nth-child(2) {
   display: none;
 }
 
-header-navbar nav ul section.text-page-links {
-  display: none;
-}
-
 section.text-page-links.active {
   display: flex;
 }
