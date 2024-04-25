@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerMenuIcon = document.querySelector(
     "section.hamburger-menu-icon"
   );
-  const textPageLinks = document.querySelector("section.text-page-links");
+  const textPageLinks = document.querySelector("ul.text-page-links");
   hamburgerMenuIcon.addEventListener("click", () => {
     textPageLinks.classList.toggle("active");
     hamburgerMenuIcon.classList.toggle("active");
