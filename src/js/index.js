@@ -46,12 +46,13 @@ for (let filter of galleryFilters) {
   });
 }
 
-const indexImageFilterButtons = document.querySelectorAll(
-  "button.redirect-and-start-image-filter"
-);
-for (let button of indexImageFilterButtons) {
-  button.addEventListener("click", () => {
-    window.location.href =
-      "../views/photography.html" + "?filter=" + button.dataset.filter;
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerMenuIcon = document.querySelector(
+    "section.hamburger-menu-icon"
+  );
+  const textPageLinks = document.querySelector("section.text-page-links");
+  hamburgerMenuIcon.addEventListener("click", () => {
+    textPageLinks.classList.toggle("active");
+    hamburgerMenuIcon.classList.toggle("active");
   });
-}
+});

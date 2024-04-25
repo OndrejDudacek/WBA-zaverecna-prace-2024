@@ -19,16 +19,16 @@ export default class FooterNavLinks extends HTMLElement {
                     </a>
                 </li>
                 <li>
-                    <a href="photography.html#portraits" aria-label="Podívejte se na mé nejlepší portréty">Portréty</a>
+                    <a href="photography.html?filter=portrait" aria-label="Podívejte se na mé nejlepší portréty">Portréty</a>
                 </li>
                 <li>
-                    <a href="photography.html#film" aria-label="Podívejte se na mé nejlepší fotografie focene na film.">Film 35mm</a>
+                    <a href="photography.html?filter=film" aria-label="Podívejte se na mé nejlepší fotografie focené na film.">Film 35mm</a>
                 </li>
                 <li>
-                    <a href="photography.html#marketing" aria-label="Podívejte se na mé nejlepší marketingové fotografie">Marketing</a>
+                    <a href="photography.html?filter=marketing" aria-label="Podívejte se na mé nejlepší marketingové fotografie">Marketing</a>
                 </li>
                 <li>
-                    <a href="photography.html#street" aria-label="Podívejte se na mé nejlepší fotky z ulic.">Street</a>
+                    <a href="photography.html?filter=street" aria-label="Podívejte se na mé nejlepší fotky z ulic.">Street</a>
                 </li>
             </ul>
             <ul>

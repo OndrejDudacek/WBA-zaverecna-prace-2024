@@ -11,7 +11,7 @@
 }
 
 html{
-  font-size: min(1.5vw, 20px);
+  font-size: min(1.6vw, 20px);
   line-height: 3rem;
 }
 
@@ -86,21 +86,30 @@ header-navbar {
   height: 5rem;
   width: 100%;
   font-size: 1.3rem;
+  position: relative;
 } 
 
 header-navbar nav {
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 0 1.6rem;
+  box-sizing: border-box;
 }
 
 header-navbar nav ul {
+  width: 100%;
   display: flex;
   justify-content: right;
   align-items: center;
   height: 100%;
-  padding: 0 1.6rem;
+}
+
+header-navbar nav ul section.text-page-links {
+  display: flex;
   gap: 1.6rem;
-  box-sizing: border-box;
 }
 
 header-navbar nav ul li:first-child {
@@ -212,7 +221,7 @@ textarea {
 
 input::placeholder, textarea::placeholder {
   color: #ffffff7f;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -420,7 +429,8 @@ article#gear h3{
 
 .gallery-filters {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
@@ -432,7 +442,7 @@ article#gear h3{
 }
 
 .gallery-filters button i {
-  display: none; /* bude změněno s implemetací js */
+  display: none;
 }
 
 .active-filter {
@@ -452,6 +462,47 @@ article#gear h3{
   cursor: pointer;
 }
 
+section.hamburger-menu-icon {
+  display: none;
+  height: 1.5rem;
+  width: 2.35rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section.hamburger-menu-icon div {
+  height: 0.18rem;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  transition:var(--transition);
+}
+
+section.hamburger-menu-icon.active {
+  justify-content: center;
+}
+
+section.hamburger-menu-icon.active div:nth-child(1) {
+  transform: translateY(0.2rem);
+  rotate: 45deg;
+}
+
+section.hamburger-menu-icon.active div:nth-child(3) {
+  transform: translateY(-0.15rem);
+  rotate: -45deg;
+}
+
+section.hamburger-menu-icon.active div:nth-child(2) {
+  display: none;
+}
+
+header-navbar nav ul section.text-page-links {
+  display: none;
+}
+
+section.text-page-links.active {
+  display: flex;
+}
 
 /* Jak stylovat scrollbar jsem se dozvěděl zde https://youtu.be/v_8CmC6cwUs?si=cYsrz0IlJKBydpuY */
 html::-webkit-scrollbar { 
@@ -475,13 +526,9 @@ html::-webkit-scrollbar-track:hover {
   background-color: #ffffff11;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   html {
     font-size: 12px;
-  }
-
-  article {
-    padding: 0 1.3rem;
   }
 
   footer {
@@ -496,9 +543,52 @@ html::-webkit-scrollbar-track:hover {
     grid-row: span 2;
   }
 
+  .photo-gallery {
+    columns: 2;
+  }
+}
+
+@media (max-width: 666px) {
+  section#email-name {
+    flex-direction: column;
+  }
+
   section.socials nav ul {
     width: 100%;
     gap: 0.5rem;
+  }
+
+  article {
+    padding: 0 1.3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .photo-gallery {
+    columns: 1;
+  }
+
+  section.hamburger-menu-icon {
+    display: flex;
+  }
+
+  header-navbar nav section.text-page-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-color);
+    height: 100vh;
+    width: 90%;
+    padding: 4rem 0;
+    font-size: 2rem;
+    position: absolute;
+    top: 4.4rem;
+    right: 0;
+    z-index: 100;
+  }
+
+  header-navbar nav section.text-page-links li:first-child {
+    margin: 0;
   }
 }
 
