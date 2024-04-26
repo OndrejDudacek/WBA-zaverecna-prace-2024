@@ -29,7 +29,7 @@ div.side-line-dot {
   position: absolute;
   left: var(--side-line-dot-x);
   top: var(--side-line-dot-y);
-  transition: var(--side-line-dot-transition) cubic-bezier(0.74,-0.01, 0.74, 0.85);
+  transition: background-color var(--side-line-dot-transition) cubic-bezier(0.66, 0, 0.24, 0.99);
 }
 
 div.active-side-line-dot {
@@ -107,7 +107,7 @@ header-navbar nav ul {
   height: 100%;
 }
 
-header-navbar nav ul ul.text-page-links {
+header-navbar nav ul.text-page-links {
   display: flex;
   gap: 1.6rem;
 }
@@ -497,7 +497,7 @@ section.hamburger-menu-icon.active div:nth-child(2) {
 }
 
 ul.text-page-links.active {
-  display: flex !important;
+  display: flex;
 }
 
 /* Jak stylovat scrollbar jsem se dozvěděl zde https://youtu.be/v_8CmC6cwUs?si=cYsrz0IlJKBydpuY */
@@ -569,18 +569,14 @@ html::-webkit-scrollbar-track:hover {
   }
 
   header-navbar nav ul.text-page-links {
-    display: none !important;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--main-color);
-    height: 100vh;
-    width: 90%;
-    padding: 4rem 0;
-    font-size: 2rem;
+    gap: 1.2rem;
     position: absolute;
-    top: 4.4rem;
-    right: 0;
-    z-index: 100;
+    top: 5rem;
+    width: 100%;
+    z-index: 2;
   }
 
   header-navbar nav ul.text-page-links li:first-child {
