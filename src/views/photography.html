@@ -52,17 +52,17 @@
                     </section>
                 </section>
                 <section class="photo-gallery">
-                    <img src="https://source.unsplash.com/random/?street" alt="street">
-                    <img src="https://source.unsplash.com/random/?portrait" alt="portrait">
-                    <img src="https://source.unsplash.com/random/?film" alt="film">
-                    <img src="https://source.unsplash.com/random/?portrait" alt="portrait">
-                    <img src="https://source.unsplash.com/random/?portrait" alt="portrait">
-                    <img src="https://source.unsplash.com/random/?film" alt="film">
-                    <img src="https://source.unsplash.com/random/?film" alt="film">
-                    <img src="https://source.unsplash.com/random/?product" alt="marketing">
-                    <img src="https://source.unsplash.com/random/?street" alt="street">
-                    <img src="https://source.unsplash.com/random/?product" alt="marketing">
-                    <img src="https://source.unsplash.com/random/?street" alt="street">
+                    <img src="https://source.unsplash.com/random/?street" data-filter="street">
+                    <img src="https://source.unsplash.com/random/?portrait" data-filter="portrait">
+                    <img src="https://source.unsplash.com/random/?film" data-filter="film">
+                    <img src="https://source.unsplash.com/random/?portrait" data-filter="portrait">
+                    <img src="https://source.unsplash.com/random/?portrait" data-filter="portrait">
+                    <img src="https://source.unsplash.com/random/?film" data-filter="film">
+                    <img src="https://source.unsplash.com/random/?film" data-filter="film">
+                    <img src="https://source.unsplash.com/random/?product" data-filter="marketing">
+                    <img src="https://source.unsplash.com/random/?street" data-filter="street">
+                    <img src="https://source.unsplash.com/random/?product" data-filter="marketing">
+                    <img src="https://source.unsplash.com/random/?street" data-filter="street">
                 </section>
             </section>
         </article>
@@ -73,7 +73,7 @@
     </main>
     <script src="../js/index.js"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search); // https://www.youtube.com/watch?v=CZP1iQFQjEY
+        const urlParams = new URLSearchParams(window.location.search);
         const filter = urlParams.get('filter');
         if (filter) {
             imageFilter(filter);

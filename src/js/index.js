@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let image of images) {
       if (filter === "all") {
         image.style.display = "block";
-      } else if (image.alt === filter) {
+      } else if (image.dataset.filter === filter) {
         image.style.display = "block";
       } else {
         image.style.display = "none";
@@ -41,9 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const galleryFilters = document.querySelectorAll(".gallery-filters button");
-  for (let filter of galleryFilters) {
-    filter.addEventListener("click", () => {
-      imageFilter(filter.dataset.filter);
+  for (let button of galleryFilters) {
+    button.addEventListener("click", () => {
+      const urlParams = new URLSearchParams(window.location.search); // https://www.youtube.com/watch?v=ug41_mF2dR8
+      urlParams.set("filter", button.dataset.filter);
+      const newUrl = `${window.location.origin}${
+        window.location.pathname
+      }?${urlParams.toString()}`;
+      window.history.pushState({}, "", newUrl);
+      imageFilter(button.dataset.filter);
     });
   }
 

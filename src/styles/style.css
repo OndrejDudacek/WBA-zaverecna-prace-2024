@@ -488,7 +488,7 @@ section.hamburger-menu-icon.active div:nth-child(1) {
 }
 
 section.hamburger-menu-icon.active div:nth-child(3) {
-  transform: translateY(-0.15rem);
+  transform: translateY(-0.20rem);
   rotate: -45deg;
 }
 
@@ -498,6 +498,7 @@ section.hamburger-menu-icon.active div:nth-child(2) {
 
 ul.text-page-links.active {
   display: flex;
+  opacity: 1;
 }
 
 /* Jak stylovat scrollbar jsem se dozvěděl zde https://youtu.be/v_8CmC6cwUs?si=cYsrz0IlJKBydpuY */
@@ -524,11 +525,11 @@ html::-webkit-scrollbar-track:hover {
 
 @media (max-width: 768px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   footer {
-    padding: 4rem 4rem;
+    padding: 3rem 3rem;
   }
 
   footer-nav-links nav {
@@ -559,7 +560,7 @@ html::-webkit-scrollbar-track:hover {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .photo-gallery {
     columns: 1;
   }
@@ -569,14 +570,15 @@ html::-webkit-scrollbar-track:hover {
   }
 
   header-navbar nav ul.text-page-links {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 1.2rem;
+    left: 0;
+    opacity: 0;
+    top: 4rem;
     position: absolute;
-    top: 5rem;
-    width: 100%;
-    z-index: 2;
+    z-index: 3;
   }
 
   header-navbar nav ul.text-page-links li:first-child {
