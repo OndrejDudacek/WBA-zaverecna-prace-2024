@@ -73,11 +73,23 @@
     </main>
     <script src="../js/index.js"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const filter = urlParams.get('filter');
-        if (filter) {
-            imageFilter(filter);
-        }
+        // https://stackoverflow.com/questions/47917596/listener-event-for-when-url-parameters-change
+        let previousUrl = "";
+        const observer = new MutationObserver(function (mutations) {
+            if (window.location.href !== previousUrl) {
+                previousUrl = window.location.href;
+                const urlParams = new URLSearchParams(window.location.search);
+                const filter = urlParams.get('filter');
+                if (filter) {
+                    imageFilter(filter);
+                }
+            }
+        });
+        const config = { subtree: true, childList: true };
+
+        observer.observe(document, config);
+
+
     </script>
 </body>
 

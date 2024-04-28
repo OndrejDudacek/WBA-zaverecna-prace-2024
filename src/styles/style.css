@@ -599,4 +599,8 @@ html::-webkit-scrollbar-track:hover {
   header section.main-section-content {
     padding-left: 0;
   }
+
+  section.socials nav i {
+    font-size: 3rem;
+  }
 }
