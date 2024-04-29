@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="icon" href="../imgs/logo.svg">
 
     <link rel="stylesheet" href="../styles/reset.css">
@@ -35,7 +37,7 @@
             </article>
         </header>
 
-        <article id="contact-form">
+        <article>
             <section class="main-section-content">
                 <section class="main-section-header">
                     <h2>Galerie</h2>
@@ -52,17 +54,6 @@
                     </section>
                 </section>
                 <section class="photo-gallery">
-                    <img src="https://source.unsplash.com/random/?street" data-filter="street">
-                    <img src="https://source.unsplash.com/random/?portrait" data-filter="portrait">
-                    <img src="https://source.unsplash.com/random/?film" data-filter="film">
-                    <img src="https://source.unsplash.com/random/?portrait" data-filter="portrait">
-                    <img src="https://source.unsplash.com/random/?portrait" data-filter="portrait">
-                    <img src="https://source.unsplash.com/random/?film" data-filter="film">
-                    <img src="https://source.unsplash.com/random/?film" data-filter="film">
-                    <img src="https://source.unsplash.com/random/?product" data-filter="marketing">
-                    <img src="https://source.unsplash.com/random/?street" data-filter="street">
-                    <img src="https://source.unsplash.com/random/?product" data-filter="marketing">
-                    <img src="https://source.unsplash.com/random/?street" data-filter="street">
                 </section>
             </section>
         </article>
@@ -71,14 +62,94 @@
             <footer-nav-links></footer-nav-links>
         </footer>
     </main>
-    <script src="../js/index.js"></script>
+    <article id="fullsize-photo">
+        <button><i class="fa-solid fa-xmark"></i></button>
+        <img src="">
+        <section class="image-info">
+            <section id="aperture">
+                <span class="material-symbols-outlined">
+                    camera
+                </span>
+                <p>f/2.8</p>
+            </section>
+            <section id="shuter-speed">
+                <i class="fa-solid fa-stopwatch"></i>
+                <p>1/1000</p>
+            </section>
+            <section id="iso">
+                <i>ISO</i>
+                <p>400</p>
+            </section>
+            <section id="focal-lenght">
+                <i class="fa-solid fa-chevron-left"></i>
+                <p>85 mm</p>
+            </section>
+            <section id="camera">
+                <i class="fa-solid fa-camera"></i>
+                <p>Nikon D3400</p>
+            </section>
+            <section id="camera-type">
+                <i class="fa-solid fa-photo-film"></i>
+                <p>Digital</p>
+            </section>
+        </section>
+    </article>
     <script>
-        let images = [
-            {
-                
-            }
-        ]
+        let imagesArray;
+        const gallery = document.querySelector('.photo-gallery');
+        fetch('../js/imagesArray.JSON')
+            .then(res => res.json())
+            .then(data => {
+                imagesArray = data;
+                for (const image of imagesArray) {
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.dataset.filter = image.filter;
+                    img.alt = image.alt;
+                    gallery.appendChild(img);
+                    img.addEventListener('click', () => {
+                        const fullsizePhoto = document.getElementById('fullsize-photo');
+                        fullsizePhoto.style.display = 'flex';
+                        fullsizePhoto.querySelector('img').src = img.src;
+                        fullsizePhoto.querySelector('#aperture p').textContent = img.dataset.aperture;
+                        fullsizePhoto.querySelector('#shuter-speed p').textContent = img.dataset.shutterSpeed;
+                        fullsizePhoto.querySelector('#iso p').textContent = img.dataset.iso;
+                        fullsizePhoto.querySelector('#focal-lenght p').textContent = img.dataset.focalLenght;
+                        fullsizePhoto.querySelector('#camera p').textContent = img.dataset.camera;
+                        fullsizePhoto.querySelector('#camera-type p').textContent = img.dataset.cameraType;
+                    });
+                }
+            });
 
+        document.getElementById('fullsize-photo').querySelector('button').addEventListener('click', () => {
+            document.getElementById('fullsize-photo').style.display = 'none';
+        });
+
+        // Image filter
+        function imageFilter(filter) {
+            const images = document.querySelectorAll(".photo-gallery img");
+            for (let image of images) {
+                if (filter === "all") {
+                    image.style.display = "block";
+                } else if (image.dataset.filter === filter) {
+                    image.style.display = "block";
+                } else {
+                    image.style.display = "none";
+                }
+            }
+
+            const previousActive = document.querySelector(
+                ".gallery-filters button.active-filter"
+            );
+            previousActive.classList.remove("active-filter");
+            previousActive.children[0].style.display = "none"; // https://www.geeksforgeeks.org/how-to-get-the-child-element-of-a-parent-using-javascript/
+
+            const active = document.querySelector(
+                `.gallery-filters button[data-filter="${filter}"]`
+            );
+            active.classList.add("active-filter");
+            active.children[0].style.display = "initial";
+        }
 
         // https://stackoverflow.com/questions/47917596/listener-event-for-when-url-parameters-change
         let previousUrl = "";
@@ -96,8 +167,21 @@
 
         observer.observe(document, config);
 
+        const galleryFilters = document.querySelectorAll(".gallery-filters button");
+        for (let button of galleryFilters) {
+            button.addEventListener("click", () => {
+                const urlParams = new URLSearchParams(window.location.search); // https://www.youtube.com/watch?v=ug41_mF2dR8
+                urlParams.set("filter", button.dataset.filter);
+                const newUrl = `${window.location.origin}${window.location.pathname
+                    }?${urlParams.toString()}`;
+                window.history.pushState({}, "", newUrl);
+                imageFilter(button.dataset.filter);
+            });
+        }
+
 
     </script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>

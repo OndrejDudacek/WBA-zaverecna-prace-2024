@@ -140,7 +140,7 @@ header-navbar nav > ul > li:first-child a::after {
   display: none;
 }
 
-article{
+main article{
   display: flex;
   flex-direction: column;
   padding:0 7rem;
@@ -502,6 +502,60 @@ ul.text-page-links.active {
   opacity: 1;
 }
 
+#fullsize-photo {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #131313e2;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+#fullsize-photo img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  margin: auto 0;
+}
+
+#fullsize-photo section.image-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #2e2e2ee2;
+  gap: 2rem;
+}
+
+#fullsize-photo section.image-info section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+#fullsize-photo button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#fullsize-photo button:hover, #fullsize-photo button:focus {
+  scale: 1.2;
+  color: #ffffff;
+}
+
 /* Jak stylovat scrollbar jsem se dozvěděl zde https://youtu.be/v_8CmC6cwUs?si=cYsrz0IlJKBydpuY */
 html::-webkit-scrollbar { 
   width: 0.55vw;
@@ -556,7 +610,7 @@ html::-webkit-scrollbar-track:hover {
     gap: 0.5rem;
   }
 
-  article {
+  main article {
     padding: 0 1.3rem;
   }
 }
