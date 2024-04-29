@@ -229,11 +229,12 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   background-color: #ffffff43;
 }
 
-.acceptable {
+/* https://medium.com/stackanatomy/form-validation-using-javascripts-constraint-validation-api-fd4b70720288  https://web.dev/articles/user-valid-and-user-invalid-pseudo-classes */
+input:user-valid, textarea:user-valid{
   border-bottom: #9bcc9b 0.1rem solid;
 }
 
-.unacceptable {
+input:user-invalid, textarea:user-invalid{
   border-bottom: #da8888 0.1rem solid;
 }
 

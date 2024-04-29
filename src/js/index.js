@@ -48,7 +48,7 @@ for (let button of galleryFilters) {
       window.location.pathname
     }?${urlParams.toString()}`;
     window.history.pushState({}, "", newUrl);
-    location.reload();
+    imageFilter(button.dataset.filter);
   });
 }
 
