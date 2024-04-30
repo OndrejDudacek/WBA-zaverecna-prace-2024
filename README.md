@@ -12,4 +12,4 @@ Zadání závěrečné práce a její popis najdete v souboru [Zadání](Zadani.
 
 Čas čistého kódování: <a href="https://wakatime.com/badge/user/018d5a1c-ea5b-423c-811b-534e168f1e6e/project/018e2ed8-6350-4340-9496-de5070f7cc69"><img src="https://wakatime.com/badge/user/018d5a1c-ea5b-423c-811b-534e168f1e6e/project/018e2ed8-6350-4340-9496-de5070f7cc69.svg" alt="wakatime"></a>
 
-Design: 10 h
+Design: 6 h
