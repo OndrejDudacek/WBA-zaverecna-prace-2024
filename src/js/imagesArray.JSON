@@ -1,10 +1,9 @@
 [
   {
-    "id": 1,
     "thumbnailSrc": "../imgs/fotka.webp",
     "src": "../imgs/fotka.jpg",
-    "filter": "street",
-    "alt": "street fotka",
+    "filter": "portrait",
+    "alt": "portrait fotka",
     "aperture": "f/1.8",
     "shutterSpeed": "1/1000",
     "iso": "400",
