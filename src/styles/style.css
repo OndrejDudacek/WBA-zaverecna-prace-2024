@@ -429,10 +429,10 @@ article#gear h3{
 }
 
 .gallery-filters {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .gallery-filters button {
@@ -597,6 +597,10 @@ html::-webkit-scrollbar-track:hover {
 
   .photo-gallery {
     columns: 2;
+  }
+
+  .gallery-filters {
+    flex-wrap: wrap;
   }
 }
 

@@ -1,90 +1,15 @@
 [
   {
-    "src": "https://source.unsplash.com/random?street",
+    "id": 1,
+    "thumbnailSrc": "../imgs/fotka.webp",
+    "src": "../imgs/fotka.jpg",
     "filter": "street",
-    "alt": "street photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
+    "alt": "street fotka",
+    "aperture": "f/1.8",
+    "shutterSpeed": "1/1000",
     "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
+    "focalLenght": "85mm",
+    "camera": "Nikon D750",
     "cameraType": "Digital"
-  },
-  {
-    "src": "https://source.unsplash.com/random?marketing",
-    "filter": "marketing",
-    "alt": "marketing photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
-    "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
-    "cameraType": "Digital"
-  },
-  {
-    "src": "https://source.unsplash.com/random?portrait",
-    "filter": "portrait",
-    "alt": "portrait photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
-    "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
-    "cameraType": "Digital"
-  },
-  {
-    "src": "https://source.unsplash.com/random?film",
-    "filter": "film",
-    "alt": "film photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
-    "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
-    "cameraType": "Film"
-  },
-  {
-    "src": "https://source.unsplash.com/random?street",
-    "filter": "street",
-    "alt": "street photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
-    "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
-    "cameraType": "Digital"
-  },
-  {
-    "src": "https://source.unsplash.com/random?marketing",
-    "filter": "marketing",
-    "alt": "marketing photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
-    "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
-    "cameraType": "Digital"
-  },
-  {
-    "src": "https://source.unsplash.com/random?portrait",
-    "filter": "portrait",
-    "alt": "portrait photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
-    "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
-    "cameraType": "Digital"
-  },
-  {
-    "src": "https://source.unsplash.com/random?film",
-    "filter": "film",
-    "alt": "film photo",
-    "apurture": "f/2.8",
-    "shutter": "1/1000",
-    "iso": "400",
-    "focalLength": "70 mm",
-    "camera": "Nikon D3400",
-    "cameraType": "Film"
   }
 ]

@@ -103,14 +103,22 @@
                 imagesArray = data;
                 for (const image of imagesArray) {
                     const img = document.createElement('img');
-                    img.src = image.src;
+                    img.src = image.thumbnailSrc;
                     img.dataset.filter = image.filter;
                     img.alt = image.alt;
+                    img.dataset.id = image.id;
+                    img.dataset.aperture = image.aperture;
+                    img.dataset.shutterSpeed = image.shutterSpeed;
+                    img.dataset.iso = image.iso;
+                    img.dataset.focalLenght = image.focalLenght;
+                    img.dataset.camera = image.camera;
+                    img.dataset.cameraType = image.cameraType;
+                    img.dataset.fullSizeSrc = image.src
                     gallery.appendChild(img);
                     img.addEventListener('click', () => {
                         const fullsizePhoto = document.getElementById('fullsize-photo');
                         fullsizePhoto.style.display = 'flex';
-                        fullsizePhoto.querySelector('img').src = img.src;
+                        fullsizePhoto.querySelector('img').src = img.dataset.fullSizeSrc;
                         fullsizePhoto.querySelector('#aperture p').textContent = img.dataset.aperture;
                         fullsizePhoto.querySelector('#shuter-speed p').textContent = img.dataset.shutterSpeed;
                         fullsizePhoto.querySelector('#iso p').textContent = img.dataset.iso;
