@@ -23,11 +23,12 @@ fs.readdir(folderPath, (err, files) => {
         if (error) {
           console.log("Error: " + error.message);
         } else {
-          console.log(exifData);
-          imageObject.aperture = exifData.exif.FNumber;
-          imageObject.shutterSpeed = mathjs.fraction(exifData.exif.ExposureTime)
+          imageObject.aperture = `f/${exifData.exif.FNumber}`;
+          imageObject.shutterSpeed = mathjs
+            .fraction(exifData.exif.ExposureTime)
+            .toFraction();
           imageObject.iso = exifData.exif.ISO;
-          imageObject.focalLength = exifData.exif.FocalLength;
+          imageObject.focalLength = `${exifData.exif.FocalLength}mm`;
           imageObject.camera = `${exifData.image.Make} ${exifData.image.Model}`;
           imageObject.cameraTye = "Digital";
           console.log(imageObject);
