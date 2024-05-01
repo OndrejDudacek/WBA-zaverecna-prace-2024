@@ -516,7 +516,7 @@ ul.text-page-links.active {
 }
 
 #fullsize-photo img {
-  max-width: 80%;
+  max-width: 90%;
   max-height: 80%;
   object-fit: contain;
   margin: auto 0;
@@ -524,6 +524,7 @@ ul.text-page-links.active {
 
 #fullsize-photo section.image-info {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   width: 100%;

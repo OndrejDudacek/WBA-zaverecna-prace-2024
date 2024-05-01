@@ -32,7 +32,9 @@ const processFiles = async () => {
     if (!file.endsWith(".jpg")) continue;
     if (!files.includes(file.replace(".jpg", ".webp"))) {
       console.log(`Webp generated for ${file}`);
-      sharp(path.join(folderPath, file)).webp().toFile(path.join(folderPath, file.replace(".jpg", ".webp")));
+      sharp(path.join(folderPath, file))
+        .webp()
+        .toFile(path.join(folderPath, file.replace(".jpg", ".webp")));
     }
     const exifData = await extractExifData(path.join(folderPath, file));
     const imageObject = {};
@@ -46,13 +48,26 @@ const processFiles = async () => {
       .replace("..\\src", "..");
     imageObject.alt = "";
     imageObject.filter = "";
+    const data = JSON.parse(
+      fs.readFileSync(
+        path.resolve(__dirname, "../src/js/imagesArray.JSON"),
+        "utf8"
+      )
+    );
+    data.forEach((item) => {
+      if (item.src === imageObject.src) {
+        imageObject.alt = item.alt;
+        imageObject.filter = item.filter;
+      }
+    });
     imageObject.aperture = `f/${exifData.exif.FNumber}`;
     imageObject.shutterSpeed = mathjs
       .fraction(exifData.exif.ExposureTime)
       .toFraction();
     imageObject.iso = exifData.exif.ISO;
     imageObject.focalLength = `${exifData.exif.FocalLength}mm`;
-    if (exifData.image.Make === "NIKON CORPORATION") imageObject.camera = `${exifData.image.Model}`;
+    if (exifData.image.Make === "NIKON CORPORATION")
+      imageObject.camera = `${exifData.image.Model}`;
     else imageObject.camera = `${exifData.image.Make} ${exifData.image.Model}`;
     imageObject.cameraType = "Digital";
     imagesArray.push(imageObject);
@@ -67,7 +82,6 @@ const processFiles = async () => {
 
 processFiles();
 
-
 // const extractExifData = async(imagePath) => {
 //   try {
 //     new ExifImage({ image: imagePath }, function (error, exifData) {
@@ -78,7 +92,6 @@ processFiles();
 //     console.log("Error: " + error.message);
 //   }
 // };
-
 //   const files = fs.readdirSync(folderPath);
 //   for (let file of files) {
 //     console.log(file);
@@ -100,11 +113,9 @@ processFiles();
 //     imageObject.cameraTye = "Digital";
 //     console.log(imageObject);
 //     imagesArray.push(imageObject);
-
 //     console.log(`✅ ${file}`);
 //     console.log(imagesArray);
 //   }
-
 //   try {
 //     fs.writeFileSync("../src/js/imagesArray.JSON", JSON.stringify(imagesArray));
 //   } catch (error) {
@@ -123,8 +134,6 @@ A on mi to odpověděl takhle:
     kód, který mi vrátil, je použit výše
   In this version of the code, extractExifData returns a Promise that resolves with the exifData. The processFiles function is marked as async, which allows you to use the await keyword to wait for the Promise from extractExifData to resolve before continuing.
 */
-
-
 
 /* 
 Moje otázka:
@@ -150,4 +159,16 @@ Then, you can use it in your JavaScript code like this:
   console.log(decimalToFraction(decimal)); // Output: 628318/200000 (exact fraction for pi)
   ```
 This approach is simpler and more robust than implementing the conversion logic yourself, as it leverages the functionality provided by the `mathjs` library. 
+*/
+
+/* 
+const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../src/js/imagesArray.JSON"), "utf8"));
+data.forEach((item) => {
+  if (item.src === imageObject.src) {
+    imageObject.alt = item.alt;
+    imageObject.filter = item.filter;
+  }
+}); 
+
+Tenhle kód mi poradil copilot chat po tom, co jsem vyzkoušel požít fetch, jako ve photography.html souboru a nefungovalo mi to.
 */
