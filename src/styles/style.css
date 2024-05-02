@@ -464,6 +464,7 @@ article#gear h3{
 }
 
 .photo-gallery {
+  width: 100%;
   column-count: 3;
   column-gap: 1.2rem;
 }
