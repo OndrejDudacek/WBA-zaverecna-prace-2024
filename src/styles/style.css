@@ -84,6 +84,10 @@ header {
   min-height: 450px;
 } 
 
+header nav img {
+  transition: transform var(--transition);
+}
+
 header-navbar {
   height: 5rem;
   width: 100%;
@@ -186,6 +190,7 @@ article#contact-form section.text-buttons {
 form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1.2rem;
   width: 100%;
 }
@@ -210,6 +215,7 @@ input, textarea {
   font-size: 1rem;
   background-color: var(--button-color);
   border: none;
+  border-radius: 0;
   border-bottom: #c1c1c1 0.1rem solid;
   padding: 0.3rem 0.8rem;
   box-sizing: border-box;
@@ -398,8 +404,8 @@ section.socials nav ul li a::after {
   display: none;
 }
 
-section.socials nav ul li a:hover i, section.socials nav ul li a:focus i{
-  transform: scale(1.2);
+section.socials nav ul li a:hover i, section.socials nav ul li a:focus i, header-navbar nav > ul li:first-child:hover img, header-navbar nav > ul li:first-child:focus img, i.fa-solid.fa-bars:hover, i.fa-solid.fa-bars:focus, i.fa-solid.fa-bars.fa-xmark:hover, i.fa-solid.fa-bars.fa-xmark:focus {
+  transform: translateY(-0.2rem) scale(1.2);
 }
 
 section.socials nav i{
@@ -418,6 +424,7 @@ section.socials p {
 }
 
 header.subpage-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(../imgs/subCover.webp);
   height: 20vh;
   min-height: 15rem;
   background-attachment: scroll;
@@ -474,6 +481,7 @@ i.fa-solid.fa-bars {
   display: none;
   position: relative;
   z-index: 2;
+  transition: transform var(--transition);
 }
 
 i.fa-solid.fa-bars.fa-xmark {
@@ -661,6 +669,11 @@ html::-webkit-scrollbar-track:hover {
 
   section.socials nav i {
     font-size: 3rem;
+  }
+
+  div.h-captcha {
+    scale: 0.8;
+    transform: translateX(-2.6rem);
   }
 }
 

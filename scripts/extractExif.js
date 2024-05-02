@@ -14,21 +14,26 @@ const extractExifData = (imagePath) => {
       new ExifImage({ image: imagePath }, function (error, exifData) {
         if (error) {
           console.log("Error: " + error.message);
-          reject(error);
+          resolve(null);
         } else {
+          if (!exifData.exif.ExposureTime) resolve(null);
           resolve(exifData);
         }
       });
     } catch (error) {
       console.log("Error: " + error.message);
-      reject(error);
+      resolve(null);
     }
   });
 };
 
 const processFiles = async () => {
   const files = fs.readdirSync(folderPath);
+  console.log(files);
   for (let file of files) {
+    console.log(file);
+    file = file.replace(".JPG", ".jpg");
+    console.log(file);
     if (!file.endsWith(".jpg")) continue;
     if (!files.includes(file.replace(".jpg", ".webp"))) {
       console.log(`Webp generated for ${file}`);
@@ -61,16 +66,28 @@ const processFiles = async () => {
         imageObject.filter = item.filter;
       }
     });
-    imageObject.aperture = `f/${exifData.exif.FNumber}`;
-    imageObject.shutterSpeed = mathjs
-      .fraction(exifData.exif.ExposureTime)
-      .toFraction();
-    imageObject.iso = exifData.exif.ISO;
-    imageObject.focalLength = `${exifData.exif.FocalLength}mm`;
-    if (exifData.image.Make === "NIKON CORPORATION")
-      imageObject.camera = `${exifData.image.Model}`;
-    else imageObject.camera = `${exifData.image.Make} ${exifData.image.Model}`;
-    imageObject.cameraType = "Digital";
+    if (exifData) {
+      console.log(exifData);
+      imageObject.aperture = `f/${exifData.exif.FNumber}`;
+      imageObject.shutterSpeed = mathjs
+        .fraction(exifData.exif.ExposureTime)
+        .toFraction();
+      imageObject.iso = exifData.exif.ISO;
+      imageObject.focalLength = `${exifData.exif.FocalLength}mm`;
+      if (exifData.image.Make === "NIKON CORPORATION")
+        imageObject.camera = `${exifData.image.Model}`;
+      else
+        imageObject.camera = `${exifData.image.Make} ${exifData.image.Model}`;
+      imageObject.cameraType = "Digital";
+    } else {
+      imageObject.aperture = "?";
+      imageObject.shutterSpeed = "?";
+      imageObject.iso = "?";
+      imageObject.focalLength = 58;
+      imageObject.camera = "Zenit TTL";
+      imageObject.cameraType = "Analog";
+      imageObject.filter = "film";
+    }
     imagesArray.push(imageObject);
   }
   try {
@@ -172,4 +189,39 @@ data.forEach((item) => {
 }); 
 
 Tenhle kód mi poradil copilot chat po tom, co jsem vyzkoušel požít fetch, jako ve photography.html souboru a nefungovalo mi to.
+*/
+
+/* Když jsem vložil obrázek bez metadat, dostával jsem error, tak jsem se zeptal github copilota, jak to vyřešit.
+Tohle mi odpověděl:
+The error message "No Exif segment found in the given image" means that the exif library was unable to find any Exif metadata in the image file you're trying to process. Exif metadata is often included in images taken with digital cameras, but not all images will have it.
+Here are a few things you could do to handle this error:
+  Check if the image should have Exif data: Not all images will have Exif data. For example, images that have been edited or saved with certain software may not have Exif data. If you're expecting the image to have Exif data, you might want to check the source of the image.
+  Handle the error in your code: You can modify your extractExifData function to handle this error and continue processing the rest of the images. Here's how you can do it:
+    const extractExifData = (imagePath) => {
+      return new Promise((resolve, reject) => {
+        try {
+          new ExifImage({ image: imagePath }, function (error, exifData) {
+            if (error) {
+              console.log("Error: " + error.message);
+              resolve(null); // Resolve with null if there's an error
+            } else {
+              resolve(exifData);
+            }
+          });
+        } catch (error) {
+          console.log("Error: " + error.message);
+          resolve(null); // Resolve with null if there's an error
+        }
+      });
+    };
+Then, in your processFiles function, you can check if exifData is null before trying to access its properties:
+  const exifData = await extractExifData(path.join(folderPath, file));
+  if (exifData) {
+    // Use exifData...
+  } else {
+    // Handle the case where there's no Exif data...
+  }
+This way, your code will continue to run even if some images don't have Exif data.
+
+
 */
