@@ -14,12 +14,10 @@ for (let dot of dots) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburgerMenuIcon = document.querySelector(
-    "section.hamburger-menu-icon"
-  );
+  const hamburgerMenuIcon = document.querySelector("i.fa-solid.fa-bars");
   const textPageLinks = document.querySelector("ul.text-page-links");
   hamburgerMenuIcon.addEventListener("click", () => {
     textPageLinks.classList.toggle("active");
-    hamburgerMenuIcon.classList.toggle("active");
+    hamburgerMenuIcon.classList.toggle("fa-xmark");
   });
 });

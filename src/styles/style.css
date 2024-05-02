@@ -1,8 +1,10 @@
 :root {
   --main-color: #1e1e1e;
   --secondary-color: #2e2e2e;
+  --secondary-color-transparent: #2e2e2ee2;
   --text-color: #ffffff;
   --footer-color: #131313;
+  --footer-color-transparent: #131313e2;
   --transition: 0.3s;
   --side-line-dot-transition: 1.5s;
   --button-color: #3e3d3da1;
@@ -70,16 +72,16 @@ main {
 main > article:nth-child(2n + 1) {
   background-color: var(--secondary-color);
 }
-
 header {
   display: flex;
   flex-direction: column;
-  background-image: url("../imgs/coverImg.webp");
-  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("../imgs/cover2560.webp");
+  background-size:cover;
   background-position: center;
   background-attachment: fixed; /* https://www.w3schools.com/howto/howto_css_parallax.asp */
   background-repeat: no-repeat;
   height: 100vh;
+  min-height: 450px;
 } 
 
 header-navbar {
@@ -114,6 +116,8 @@ header-navbar nav ul.text-page-links {
 
 header-navbar nav > ul li:first-child{
   margin-right: auto;
+  position: relative;
+  z-index: 2;
 }
 
 nav ul li a {
@@ -288,7 +292,7 @@ header article{
 
 header section.main-section-content {
   justify-content: flex-start;
-  height: 40%;
+  height: fit-content;
   border-bottom: #ffffff 0.13rem solid;
   padding-top: 1.7rem;
 }
@@ -414,8 +418,9 @@ section.socials p {
 }
 
 header.subpage-header {
-  height: 40vh;
-  background-position: bottom;
+  height: 20vh;
+  min-height: 15rem;
+  background-attachment: scroll;
 }
 
 header.subpage-header article section.main-section-content{
@@ -463,43 +468,20 @@ article#gear h3{
   cursor: pointer;
 }
 
-section.hamburger-menu-icon {
+i.fa-solid.fa-bars {
+  font-size: 2rem;
+  cursor: pointer;
   display: none;
-  height: 1.5rem;
-  width: 2.35rem;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 
-section.hamburger-menu-icon div {
-  height: 0.18rem;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 1rem;
-  transition:var(--transition);
-}
-
-section.hamburger-menu-icon.active {
-  justify-content: center;
-}
-
-section.hamburger-menu-icon.active div:nth-child(1) {
-  transform: translateY(0.2rem);
-  rotate: 45deg;
-}
-
-section.hamburger-menu-icon.active div:nth-child(3) {
-  transform: translateY(-0.20rem);
-  rotate: -45deg;
-}
-
-section.hamburger-menu-icon.active div:nth-child(2) {
-  display: none;
-}
+i.fa-solid.fa-bars.fa-xmark {
+  font-size: 2.5rem;
+} 
 
 ul.text-page-links.active {
-  display: flex;
-  opacity: 1;
+  transform: translateY(0);
 }
 
 #fullsize-photo {
@@ -508,7 +490,7 @@ ul.text-page-links.active {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #131313e2;
+  background-color: var(--footer-color-transparent);
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -530,7 +512,7 @@ ul.text-page-links.active {
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: #2e2e2ee2;
+  background-color: var(--secondary-color-transparent);
   gap: 2rem;
 }
 
@@ -625,28 +607,49 @@ html::-webkit-scrollbar-track:hover {
     columns: 1;
   }
 
-  section.hamburger-menu-icon {
-    display: flex;
+  header {
+    background-attachment: scroll;
+  }
+
+  i.fa-solid.fa-bars {
+    display: block;
   }
 
   header-navbar nav ul.text-page-links {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    padding: 4rem 0;
+    background-color: var(--footer-color-transparent);
     gap: 1.2rem;
     left: 0;
-    opacity: 0;
-    top: 4rem;
+    top: 0;
+    transform: translateY(-120%);
     position: absolute;
-    z-index: 3;
+    z-index: 1;
+    transition: transform var(--transition);
   }
 
   header-navbar nav ul.text-page-links li:first-child {
     margin: 0;
   }
+
+  header section.main-section-content {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 375px) {
+
+  header h1{
+    font-size: 2rem;
+  }
+
+  header section.text-buttons a {
+    padding: 0.7rem 1.3rem;
+  }
+
   footer-nav-links nav {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -656,11 +659,13 @@ html::-webkit-scrollbar-track:hover {
     grid-column: span 2;
   }
 
-  header section.main-section-content {
-    padding-left: 0;
-  }
-
   section.socials nav i {
     font-size: 3rem;
+  }
+}
+
+@media (max-height: 500px) {
+  header section.main-section-content {
+    padding-bottom: 3rem;
   }
 }

@@ -33,6 +33,7 @@ const processFiles = async () => {
     if (!files.includes(file.replace(".jpg", ".webp"))) {
       console.log(`Webp generated for ${file}`);
       sharp(path.join(folderPath, file))
+        .resize(300)
         .webp()
         .toFile(path.join(folderPath, file.replace(".jpg", ".webp")));
     }

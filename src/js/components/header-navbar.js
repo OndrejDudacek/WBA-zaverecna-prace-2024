@@ -23,11 +23,7 @@ export default class Navbar extends HTMLElement {
                         </ul>
                     <li>
                 </ul>
-                <section class="hamburger-menu-icon">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </section>
+                <i class="fa-solid fa-bars"></i>
             </nav>
         `;
   }
