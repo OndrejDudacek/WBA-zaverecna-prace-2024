@@ -301,6 +301,7 @@ header section.main-section-content {
   height: fit-content;
   border-bottom: #ffffff 0.13rem solid;
   padding-top: 1.7rem;
+  padding-bottom: 27vh;
 }
 
 header section.text-buttons p {
@@ -405,7 +406,7 @@ section.socials nav ul li a::after {
 }
 
 section.socials nav ul li a:hover i, section.socials nav ul li a:focus i, header-navbar nav > ul li:first-child:hover img, header-navbar nav > ul li:first-child:focus img, i.fa-solid.fa-bars:hover, i.fa-solid.fa-bars:focus, i.fa-solid.fa-bars.fa-xmark:hover, i.fa-solid.fa-bars.fa-xmark:focus {
-  transform: translateY(-0.2rem) scale(1.2);
+  transform: scale(1.13);
 }
 
 section.socials nav i{
@@ -650,10 +651,6 @@ html::-webkit-scrollbar-track:hover {
 }
 
 @media (max-width: 375px) {
-
-  header h1{
-    font-size: 2rem;
-  }
 
   header section.text-buttons a {
     padding: 0.7rem 1.3rem;

@@ -87,7 +87,7 @@ export default class FooterNavLinks extends HTMLElement {
                     </li>
                 </ul>
             </nav>
-            <p>@ Ondřej Dudáček 2024</p>
+            <p>&copy; Ondřej Dudáček 2024</p>
         </section>
         `;
   }
