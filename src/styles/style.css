@@ -80,7 +80,7 @@ header {
   background-position: center;
   background-attachment: fixed; /* https://www.w3schools.com/howto/howto_css_parallax.asp */
   background-repeat: no-repeat;
-  height: 100vh;
+  height: min(100vh, 100svh); /* https://www.youtube.com/watch?v=Wet2WECg0oM */
   min-height: 450px;
 } 
 
