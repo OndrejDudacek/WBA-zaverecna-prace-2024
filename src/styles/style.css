@@ -69,9 +69,6 @@ main {
   max-width: 2560px;
 }
 
-main > article:nth-child(2n + 1) {
-  background-color: var(--secondary-color);
-}
 header {
   display: flex;
   flex-direction: column;
@@ -185,6 +182,28 @@ section.text-buttons p {
 article#contact-form section.text-buttons {
   width: 100%;
   max-width: 50rem;
+}
+
+main > article {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+article.portrait-article {
+  background-image: linear-gradient(90deg, var(--main-color), rgba(25, 25, 25, 0.33)), url("../imgs/gallery/DSC_0184.jpg");
+}
+
+article.marketing-arcticle {
+  background-image: linear-gradient(90deg, var(--main-color), rgba(25, 25, 25, 0.33)), url("../imgs/gallery/DSC_0110.jpg");
+}
+
+article.street-article {
+  background-image: linear-gradient(90deg, var(--main-color), rgba(25, 25, 25, 0.33)), url("../imgs/gallery/DSC_0022.jpg");
+}
+
+article.about-article {
+  background-image: linear-gradient(270deg, var(--main-color), rgba(25, 25, 25, 0.33)), url("../imgs/me.jpg");
 }
 
 form {
