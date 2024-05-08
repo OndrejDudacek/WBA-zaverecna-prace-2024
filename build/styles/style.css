@@ -207,7 +207,7 @@ article#about-article {
 }
 
 article#about {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/DSC04477-Enhanced-NR.jpg");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/DSC04477-Enhanced-NR.webp");
 }
 
 article#gear {
@@ -215,7 +215,7 @@ article#gear {
 }
 
 article#motivation {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/R1-06228-005A.JPG");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/R1-06228-005A.webp");
 }
 
 form {
