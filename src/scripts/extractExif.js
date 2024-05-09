@@ -4,7 +4,7 @@ const mathjs = require("mathjs"); // https://www.npmjs.com/package/mathjs
 const ExifImage = require("exif").ExifImage; // https://www.npmjs.com/package/exif
 const sharp = require("sharp"); // https://www.npmjs.com/package/sharp
 
-const folderPath = "../src/imgs/gallery";
+const folderPath = "../imgs/gallery";
 
 let imagesArray = [];
 
@@ -29,11 +29,8 @@ const extractExifData = (imagePath) => {
 
 const processFiles = async () => {
   const files = fs.readdirSync(folderPath);
-  console.log(files);
   for (let file of files) {
-    console.log(file);
     file = file.replace(".JPG", ".jpg");
-    console.log(file);
     if (!file.endsWith(".jpg")) continue;
     if (!files.includes(file.replace(".jpg", ".webp"))) {
       console.log(`Webp generated for ${file}`);
@@ -46,17 +43,15 @@ const processFiles = async () => {
     const imageObject = {};
     imageObject.src = path
       .join(folderPath, file)
-      .replace("../src", "..")
-      .replace("..\\src", "..");
+      .replace("../imgs/", "./imgs/");
     imageObject.thumbnailSrc = imageObject.src
       .replace(".jpg", ".webp")
-      .replace("../src", "..")
-      .replace("..\\src", "..");
+      .replace("../imgs/", "./imgs/");
     imageObject.alt = "";
     imageObject.filter = "";
     const data = JSON.parse(
       fs.readFileSync(
-        path.resolve(__dirname, "../src/js/imagesArray.JSON"),
+        path.resolve(__dirname, "../js/images-array.JSON"),
         "utf8"
       )
     );
@@ -67,7 +62,6 @@ const processFiles = async () => {
       }
     });
     if (exifData) {
-      console.log(exifData);
       imageObject.aperture = `f/${exifData.exif.FNumber}`;
       imageObject.shutterSpeed = mathjs
         .fraction(exifData.exif.ExposureTime)
@@ -92,7 +86,7 @@ const processFiles = async () => {
   }
   try {
     console.log(imagesArray);
-    fs.writeFileSync("../src/js/imagesArray.JSON", JSON.stringify(imagesArray));
+    fs.writeFileSync("../js/images-array.JSON", JSON.stringify(imagesArray));
   } catch (error) {
     console.log(error);
   }
@@ -135,7 +129,7 @@ processFiles();
 //     console.log(imagesArray);
 //   }
 //   try {
-//     fs.writeFileSync("../src/js/imagesArray.JSON", JSON.stringify(imagesArray));
+//     fs.writeFileSync("./src/js/images-array.JSON", JSON.stringify(imagesArray));
 //   } catch (error) {
 //     console.log(error);
 //   }
@@ -180,7 +174,7 @@ This approach is simpler and more robust than implementing the conversion logic 
 */
 
 /* 
-const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../src/js/imagesArray.JSON"), "utf8"));
+const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, "./src/js/images-array.JSON"), "utf8"));
 data.forEach((item) => {
   if (item.src === imageObject.src) {
     imageObject.alt = item.alt;

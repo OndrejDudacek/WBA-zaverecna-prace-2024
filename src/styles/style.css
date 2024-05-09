@@ -191,15 +191,15 @@ main > article {
 }
 
 article#portrait-article {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/DSC_0184.webp");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/portrait.webp");
 }
 
 article#marketing-arcticle {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/DSC_0110.webp");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/marketing.webp");
 }
 
 article#street-article {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/DSC_0022.webp");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/street.webp");
 }
 
 article#about-article {
@@ -207,15 +207,15 @@ article#about-article {
 }
 
 article#about {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/DSC04477-Enhanced-NR.webp");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/me-right.webp");
 }
 
 article#gear {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/me.webp");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/gear.webp");
 }
 
 article#motivation {
-  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/R1-06228-005A.webp");
+  background-image: linear-gradient(90deg, var(--main-color), rgba(0, 0, 0, 0.33)), url("../imgs/motivation.webp");
 }
 
 form {

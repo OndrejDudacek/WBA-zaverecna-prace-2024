@@ -6,7 +6,7 @@ Odkaz na GitHub [zde](https://github.com/OndrejDudacek/WBA-zaverecna-prace-2024.
 
 ## Zadání
 
-Zadání závěrečné práce a její popis najdete v souboru [Zadání](Zadani.md)
+Zadání závěrečné práce a její popis najdete v souboru [Zadání](./src/zadani.md)
 
 ## Statistiky
 

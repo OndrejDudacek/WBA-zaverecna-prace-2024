@@ -97,7 +97,7 @@
     <script>
         let imagesArray;
         const gallery = document.querySelector('.photo-gallery');
-        fetch('../js/imagesArray.JSON')
+        fetch('./js/images-array.JSON')
             .then(res => res.json())
             .then(data => {
                 imagesArray = data;

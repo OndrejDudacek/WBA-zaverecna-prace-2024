@@ -4,7 +4,7 @@ export default class FooterNavLinks extends HTMLElement {
         <nav>
             <ul>
                 <li>
-                    <a href="index.html" aria-label="Vraťte se na hlavní stránku."><img class="logo" src="../imgs/logo.svg" alt="logo"></a>
+                    <a href="index.html" aria-label="Vraťte se na hlavní stránku."><img class="logo" src="./imgs/logo.svg" alt="logo"></a>
                 </li>
                 <li>
                     <a href="index.html" aria-label="Vraťte se na hlavní stránku.">
