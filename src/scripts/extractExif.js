@@ -30,7 +30,11 @@ const extractExifData = (imagePath) => {
 const processFiles = async () => {
   const files = fs.readdirSync(folderPath);
   for (let file of files) {
-    file = file.replace(".JPG", ".jpg");
+    if (file.endsWith(".JPG")) {
+      const oldPath = path.join(folderPath, file);
+      const newPath = path.join(folderPath, file.replace(".JPG", ".jpg"));
+      fs.renameSync(oldPath, newPath);
+    }
     if (!file.endsWith(".jpg")) continue;
     if (!files.includes(file.replace(".jpg", ".webp"))) {
       console.log(`Webp generated for ${file}`);
